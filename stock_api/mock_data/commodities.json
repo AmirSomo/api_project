@@ -1,0 +1,76 @@
+{
+  "commodities": [
+    {
+      "symbol": "CRUDE_OIL",
+      "name": "Crude Oil (WTI)",
+      "price": 78.45,
+      "change": -1.25,
+      "changePercent": -1.57,
+      "high": 81.30,
+      "low": 77.80,
+      "open": 79.50,
+      "unit": "USD per barrel",
+      "lastUpdate": "2026-05-08T20:00:00Z"
+    },
+    {
+      "symbol": "BRENT_OIL",
+      "name": "Brent Crude Oil",
+      "price": 82.15,
+      "change": -0.85,
+      "changePercent": -1.02,
+      "high": 84.50,
+      "low": 81.40,
+      "open": 83.00,
+      "unit": "USD per barrel",
+      "lastUpdate": "2026-05-08T20:00:00Z"
+    },
+    {
+      "symbol": "GOLD",
+      "name": "Gold",
+      "price": 2385.50,
+      "change": 12.75,
+      "changePercent": 0.54,
+      "high": 2398.25,
+      "low": 2375.00,
+      "open": 2372.50,
+      "unit": "USD per troy ounce",
+      "lastUpdate": "2026-05-08T20:00:00Z"
+    },
+    {
+      "symbol": "SILVER",
+      "name": "Silver",
+      "price": 31.42,
+      "change": 0.45,
+      "changePercent": 1.45,
+      "high": 31.80,
+      "low": 30.95,
+      "open": 31.05,
+      "unit": "USD per troy ounce",
+      "lastUpdate": "2026-05-08T20:00:00Z"
+    },
+    {
+      "symbol": "NATURAL_GAS",
+      "name": "Natural Gas",
+      "price": 2.85,
+      "change": -0.15,
+      "changePercent": -4.99,
+      "high": 3.05,
+      "low": 2.78,
+      "open": 2.95,
+      "unit": "USD per Million BTU",
+      "lastUpdate": "2026-05-08T20:00:00Z"
+    },
+    {
+      "symbol": "COPPER",
+      "name": "Copper",
+      "price": 4.32,
+      "change": 0.08,
+      "changePercent": 1.89,
+      "high": 4.38,
+      "low": 4.24,
+      "open": 4.25,
+      "unit": "USD per pound",
+      "lastUpdate": "2026-05-08T20:00:00Z"
+    }
+  ]
+}

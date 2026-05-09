@@ -1,0 +1,431 @@
+from flask import Flask, jsonify, request
+from flask_cors import CORS
+import json
+import os
+from datetime import datetime, timedelta
+import random
+
+app = Flask(__name__)
+CORS(app)
+
+# ─────────────────────────────────────────────
+# Commodity metadata (Alpha Vantage function → info)
+# ─────────────────────────────────────────────
+COMMODITY_META = {
+    "WTI":          {"name": "West Texas Intermediate (WTI) Crude Oil",          "unit": "dollars per barrel",        "base": 78.45,  "volatility": 0.025},
+    "BRENT":        {"name": "Brent Crude Oil",                                   "unit": "dollars per barrel",        "base": 82.15,  "volatility": 0.022},
+    "NATURAL_GAS":  {"name": "Henry Hub Natural Gas Spot Price",                  "unit": "dollars per million BTU",   "base": 2.85,   "volatility": 0.045},
+    "COPPER":       {"name": "Global price of Copper",                            "unit": "dollars per metric ton",    "base": 9500.0, "volatility": 0.018},
+    "ALUMINUM":     {"name": "Global price of Aluminum",                          "unit": "dollars per metric ton",    "base": 2350.0, "volatility": 0.020},
+    "WHEAT":        {"name": "Global price of Wheat",                             "unit": "dollars per metric ton",    "base": 245.0,  "volatility": 0.030},
+    "CORN":         {"name": "Global price of Corn",                              "unit": "dollars per metric ton",    "base": 185.0,  "volatility": 0.028},
+    "COTTON":       {"name": "Global price of Cotton",                            "unit": "cents per pound",           "base": 82.5,   "volatility": 0.022},
+    "SUGAR":        {"name": "Global price of Sugar",                             "unit": "cents per pound",           "base": 19.8,   "volatility": 0.032},
+    "COFFEE":       {"name": "Global price of Coffee, Other Mild Arabicas",       "unit": "cents per pound",           "base": 215.0,  "volatility": 0.035},
+}
+
+# ─────────────────────────────────────────────
+# Data loaders
+# ─────────────────────────────────────────────
+def load_stocks():
+    path = os.path.join(os.path.dirname(__file__), 'mock_data', 'stocks.json')
+    with open(path, 'r') as f:
+        return json.load(f)['stocks']
+
+
+def load_crypto():
+    path = os.path.join(os.path.dirname(__file__), 'mock_data', 'crypto.json')
+    with open(path, 'r') as f:
+        return json.load(f)['crypto']
+
+
+# ─────────────────────────────────────────────
+# Deterministic pseudo-random helpers
+# (same symbol + same day always produces same prices)
+# ─────────────────────────────────────────────
+def _seed(symbol: str, offset: int) -> float:
+    random.seed(sum(ord(c) for c in symbol) * 31 + offset)
+    return random.random()
+
+
+def _walk(base: float, symbol: str, step: int, volatility: float = 0.02) -> float:
+    random.seed(sum(ord(c) for c in symbol) * 31 + step * 7)
+    return base * (1 + random.uniform(-volatility, volatility))
+
+
+# ─────────────────────────────────────────────
+# Series generators
+# ─────────────────────────────────────────────
+def generate_daily_series(symbol: str, stock: dict, n_days: int = 100) -> dict:
+    series = {}
+    today = datetime(2026, 5, 8)
+    price = stock['price']
+
+    for i in range(n_days):
+        day = today - timedelta(days=i)
+        if day.weekday() >= 5:
+            continue
+
+        random.seed(sum(ord(c) for c in symbol) * 31 + i * 7)
+        chg = random.uniform(-0.03, 0.03)
+        open_p = price
+        price = round(price * (1 + chg), 4)
+        high = round(max(open_p, price) * (1 + random.uniform(0, 0.008)), 4)
+        low = round(min(open_p, price) * (1 - random.uniform(0, 0.008)), 4)
+        vol = int(stock['volume'] * random.uniform(0.65, 1.35))
+
+        series[day.strftime('%Y-%m-%d')] = {
+            "1. open":   f"{open_p:.4f}",
+            "2. high":   f"{high:.4f}",
+            "3. low":    f"{low:.4f}",
+            "4. close":  f"{price:.4f}",
+            "5. volume": str(vol)
+        }
+
+    return series
+
+
+def generate_intraday_series(symbol: str, stock: dict, interval: str = '5min', n_points: int = 78) -> dict:
+    mins = {'1min': 1, '5min': 5, '15min': 15, '30min': 30, '60min': 60}
+    step_min = mins.get(interval, 5)
+
+    series = {}
+    base_ts = datetime(2026, 5, 8, 20, 0, 0)
+    price = stock['price']
+
+    for i in range(n_points):
+        ts = base_ts - timedelta(minutes=i * step_min)
+        random.seed(sum(ord(c) for c in symbol) * 31 + i * 13)
+        chg = random.uniform(-0.004, 0.004)
+        open_p = price
+        price = round(price * (1 + chg), 4)
+        high = round(max(open_p, price) * (1 + random.uniform(0, 0.002)), 4)
+        low = round(min(open_p, price) * (1 - random.uniform(0, 0.002)), 4)
+        vol = int((stock['volume'] / 78) * random.uniform(0.4, 1.6))
+
+        series[ts.strftime('%Y-%m-%d %H:%M:%S')] = {
+            "1. open":   f"{open_p:.4f}",
+            "2. high":   f"{high:.4f}",
+            "3. low":    f"{low:.4f}",
+            "4. close":  f"{price:.4f}",
+            "5. volume": str(vol)
+        }
+
+    return series
+
+
+def generate_commodity_series(function: str, n_months: int = 60) -> list:
+    meta = COMMODITY_META[function]
+    base = meta['base']
+    vol = meta['volatility']
+    data = []
+    anchor = datetime(2026, 5, 1)
+
+    price = base
+    for i in range(n_months):
+        month = anchor - timedelta(days=i * 30)
+        month = month.replace(day=1)
+        random.seed(sum(ord(c) for c in function) * 31 + i * 11)
+        price = round(price * (1 + random.uniform(-vol, vol)), 4)
+        value = f"{price:.2f}" if price >= 1 else f"{price:.4f}"
+        data.append({"date": month.strftime('%Y-%m-%d'), "value": value})
+
+    return data
+
+
+def generate_crypto_daily_series(symbol: str, crypto: dict, market: str, n_days: int = 100) -> dict:
+    series = {}
+    today = datetime(2026, 5, 8)
+    price = crypto['price']
+
+    for i in range(n_days):
+        day = today - timedelta(days=i)
+        random.seed(sum(ord(c) for c in symbol) * 31 + i * 17)
+        chg = random.uniform(-0.06, 0.06)
+        open_p = price
+        price = round(price * (1 + chg), 5)
+        high = round(max(open_p, price) * (1 + random.uniform(0, 0.015)), 5)
+        low = round(min(open_p, price) * (1 - random.uniform(0, 0.015)), 5)
+        vol = round(crypto['volume_24h'] * random.uniform(0.5, 1.5), 5)
+
+        date_str = day.strftime('%Y-%m-%d')
+        series[date_str] = {
+            f"1a. open ({market})":   f"{open_p:.5f}",
+            f"1b. open ({market})":   f"{open_p:.5f}",
+            f"2a. high ({market})":   f"{high:.5f}",
+            f"2b. high ({market})":   f"{high:.5f}",
+            f"3a. low ({market})":    f"{low:.5f}",
+            f"3b. low ({market})":    f"{low:.5f}",
+            f"4a. close ({market})":  f"{price:.5f}",
+            f"4b. close ({market})":  f"{price:.5f}",
+            "5. volume":              f"{vol:.5f}",
+            f"6. market cap ({market})": f"{price * vol:.5f}"
+        }
+
+    return series
+
+
+# ─────────────────────────────────────────────
+# Error helpers
+# ─────────────────────────────────────────────
+def av_error(message: str, status: int = 400):
+    return jsonify({"Error Message": message}), status
+
+
+# ─────────────────────────────────────────────
+# Main /query endpoint
+# ─────────────────────────────────────────────
+@app.route('/query', methods=['GET'])
+def query():
+    function = request.args.get('function', '').upper()
+
+    if not function:
+        return av_error("Invalid API call. Please specify a function parameter.")
+
+    # ── TIME_SERIES_INTRADAY ──────────────────
+    if function == 'TIME_SERIES_INTRADAY':
+        symbol = request.args.get('symbol', '').upper()
+        interval = request.args.get('interval', '5min').lower()
+
+        if not symbol:
+            return av_error("Invalid API call. Please specify a symbol.")
+        if interval not in ('1min', '5min', '15min', '30min', '60min'):
+            return av_error(f"Invalid interval '{interval}'. Valid values: 1min, 5min, 15min, 30min, 60min")
+
+        stocks = load_stocks()
+        stock = next((s for s in stocks if s['symbol'] == symbol), None)
+        if not stock:
+            return av_error(f"Invalid API call, symbol '{symbol}' not found.", 404)
+
+        series = generate_intraday_series(symbol, stock, interval)
+        return jsonify({
+            "Meta Data": {
+                "1. Information": f"Intraday ({interval}) open, high, low, close prices and volume",
+                "2. Symbol": symbol,
+                "3. Last Refreshed": "2026-05-08 20:00:00",
+                "4. Interval": interval,
+                "5. Output Size": "Compact",
+                "6. Time Zone": "US/Eastern"
+            },
+            f"Time Series ({interval})": series
+        })
+
+    # ── TIME_SERIES_DAILY ─────────────────────
+    if function == 'TIME_SERIES_DAILY':
+        symbol = request.args.get('symbol', '').upper()
+
+        if not symbol:
+            return av_error("Invalid API call. Please specify a symbol.")
+
+        stocks = load_stocks()
+        stock = next((s for s in stocks if s['symbol'] == symbol), None)
+        if not stock:
+            return av_error(f"Invalid API call, symbol '{symbol}' not found.", 404)
+
+        series = generate_daily_series(symbol, stock)
+        return jsonify({
+            "Meta Data": {
+                "1. Information": "Daily Prices (open, high, low, close) and Volumes",
+                "2. Symbol": symbol,
+                "3. Last Refreshed": "2026-05-08",
+                "4. Output Size": "Compact",
+                "5. Time Zone": "US/Eastern"
+            },
+            "Time Series (Daily)": series
+        })
+
+    # ── GLOBAL_QUOTE ──────────────────────────
+    if function == 'GLOBAL_QUOTE':
+        symbol = request.args.get('symbol', '').upper()
+
+        if not symbol:
+            return av_error("Invalid API call. Please specify a symbol.")
+
+        stocks = load_stocks()
+        stock = next((s for s in stocks if s['symbol'] == symbol), None)
+        if not stock:
+            return jsonify({"Global Quote": {}})
+
+        prev_close = round(stock['price'] - stock['change'], 4)
+        return jsonify({
+            "Global Quote": {
+                "01. symbol":           symbol,
+                "02. open":             f"{stock['open']:.4f}",
+                "03. high":             f"{stock['high']:.4f}",
+                "04. low":              f"{stock['low']:.4f}",
+                "05. price":            f"{stock['price']:.4f}",
+                "06. volume":           str(stock['volume']),
+                "07. latest trading day": "2026-05-08",
+                "08. previous close":   f"{prev_close:.4f}",
+                "09. change":           f"{stock['change']:.4f}",
+                "10. change percent":   f"{stock['changePercent']:.4f}%"
+            }
+        })
+
+    # ── SYMBOL_SEARCH ─────────────────────────
+    if function == 'SYMBOL_SEARCH':
+        keywords = request.args.get('keywords', '').lower()
+
+        if not keywords:
+            return av_error("Invalid API call. Please specify a keywords parameter.")
+
+        stocks = load_stocks()
+        matches = []
+        for s in stocks:
+            if keywords in s['symbol'].lower():
+                score = "1.0000"
+            elif keywords in s['name'].lower():
+                score = "0.8000"
+            else:
+                continue
+            matches.append({
+                "1. symbol":       s['symbol'],
+                "2. name":         s['name'],
+                "3. type":         "Equity",
+                "4. region":       "United States",
+                "5. marketOpen":   "09:30",
+                "6. marketClose":  "16:00",
+                "7. timezone":     "UTC-04",
+                "8. currency":     "USD",
+                "9. matchScore":   score
+            })
+
+        return jsonify({"bestMatches": matches})
+
+    # ── Commodity functions ───────────────────
+    if function in COMMODITY_META:
+        interval = request.args.get('interval', 'monthly').lower()
+        if interval not in ('daily', 'weekly', 'monthly'):
+            return av_error(f"Invalid interval '{interval}'. Valid values: daily, weekly, monthly")
+
+        meta = COMMODITY_META[function]
+        n = {'monthly': 60, 'weekly': 104, 'daily': 365}[interval]
+        data = generate_commodity_series(function, n_months=n)
+
+        return jsonify({
+            "name":     meta['name'],
+            "interval": interval,
+            "unit":     meta['unit'],
+            "data":     data
+        })
+
+    # ── ALL_COMMODITIES ───────────────────────
+    if function == 'ALL_COMMODITIES':
+        interval = request.args.get('interval', 'monthly').lower()
+        result = []
+        for func, meta in COMMODITY_META.items():
+            data = generate_commodity_series(func, n_months=12)
+            result.append({
+                "id":       func,
+                "name":     meta['name'],
+                "unit":     meta['unit'],
+                "interval": interval,
+                "data":     data
+            })
+        return jsonify({
+            "name":     "All Commodities",
+            "interval": interval,
+            "data":     result
+        })
+
+    # ── CURRENCY_EXCHANGE_RATE ────────────────
+    if function == 'CURRENCY_EXCHANGE_RATE':
+        from_cur = request.args.get('from_currency', '').upper()
+        to_cur = request.args.get('to_currency', 'USD').upper()
+
+        if not from_cur:
+            return av_error("Invalid API call. Please specify from_currency.")
+
+        cryptos = load_crypto()
+        crypto = next((c for c in cryptos if c['symbol'] == from_cur), None)
+
+        if crypto:
+            rate = crypto['price']
+            from_name = crypto['name']
+        else:
+            fiat = {"EUR": (1.085, "Euro"), "GBP": (1.272, "British Pound Sterling"),
+                    "JPY": (0.00672, "Japanese Yen"), "CAD": (0.737, "Canadian Dollar"),
+                    "AUD": (0.652, "Australian Dollar"), "CHF": (1.102, "Swiss Franc")}
+            if from_cur in fiat:
+                rate, from_name = fiat[from_cur]
+            else:
+                return av_error(f"Currency '{from_cur}' not supported.", 404)
+
+        spread = max(rate * 0.0001, 0.0001)
+        return jsonify({
+            "Realtime Currency Exchange Rate": {
+                "1. From_Currency Code": from_cur,
+                "2. From_Currency Name": from_name,
+                "3. To_Currency Code":   to_cur,
+                "4. To_Currency Name":   "United States Dollar",
+                "5. Exchange Rate":      f"{rate:.8f}",
+                "6. Last Refreshed":     "2026-05-08 20:00:00",
+                "7. Time Zone":          "UTC",
+                "8. Bid Price":          f"{rate - spread:.8f}",
+                "9. Ask Price":          f"{rate + spread:.8f}"
+            }
+        })
+
+    # ── DIGITAL_CURRENCY_DAILY ────────────────
+    if function == 'DIGITAL_CURRENCY_DAILY':
+        symbol = request.args.get('symbol', '').upper()
+        market = request.args.get('market', 'USD').upper()
+
+        if not symbol:
+            return av_error("Invalid API call. Please specify a symbol.")
+
+        cryptos = load_crypto()
+        crypto = next((c for c in cryptos if c['symbol'] == symbol), None)
+        if not crypto:
+            return av_error(f"Invalid API call, symbol '{symbol}' not found.", 404)
+
+        series = generate_crypto_daily_series(symbol, crypto, market)
+        return jsonify({
+            "Meta Data": {
+                "1. Information":          "Daily Prices and Volumes for Digital Currency",
+                "2. Digital Currency Code": symbol,
+                "3. Digital Currency Name": crypto['name'],
+                "4. Market Code":           market,
+                "5. Market Name":           "United States Dollar",
+                "6. Last Refreshed":        "2026-05-08 00:00:00",
+                "7. Time Zone":             "UTC"
+            },
+            "Time Series (Digital Currency Daily)": series
+        })
+
+    return av_error(
+        f"Invalid API call. Unsupported function '{function}'. "
+        "Supported: TIME_SERIES_INTRADAY, TIME_SERIES_DAILY, GLOBAL_QUOTE, SYMBOL_SEARCH, "
+        "CURRENCY_EXCHANGE_RATE, DIGITAL_CURRENCY_DAILY, ALL_COMMODITIES, "
+        + ", ".join(COMMODITY_META.keys())
+    )
+
+
+# ─────────────────────────────────────────────
+# Health check
+# ─────────────────────────────────────────────
+@app.route('/health', methods=['GET'])
+def health_check():
+    return jsonify({
+        "status": "ok",
+        "service": "Stock API (Alpha Vantage compatible mock)",
+        "supported_functions": [
+            "TIME_SERIES_INTRADAY", "TIME_SERIES_DAILY", "GLOBAL_QUOTE", "SYMBOL_SEARCH",
+            "CURRENCY_EXCHANGE_RATE", "DIGITAL_CURRENCY_DAILY", "ALL_COMMODITIES"
+        ] + list(COMMODITY_META.keys()),
+        "timestamp": datetime.utcnow().isoformat() + "Z"
+    })
+
+
+@app.errorhandler(404)
+def not_found(error):
+    return jsonify({"Error Message": "Endpoint not found. Use /query?function=FUNCTION_NAME"}), 404
+
+
+@app.errorhandler(500)
+def internal_error(error):
+    return jsonify({"Error Message": "Internal server error."}), 500
+
+
+if __name__ == '__main__':
+    app.run(debug=True, host='0.0.0.0', port=5002)
