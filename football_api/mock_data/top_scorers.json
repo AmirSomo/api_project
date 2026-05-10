@@ -1,0 +1,52 @@
+{
+  "top_scorers": {
+    "1": [
+      {"rank": 1,  "player": {"id": 101, "name": "Erling Haaland",     "nationality": "Norwegian",  "age": 25, "position": "Forward"},  "team_id": 2,  "team_name": "Manchester City",   "goals": 29, "assists": 8,  "appearances": 35, "minutes": 3010},
+      {"rank": 2,  "player": {"id": 102, "name": "Mohamed Salah",      "nationality": "Egyptian",   "age": 32, "position": "Forward"},  "team_id": 3,  "team_name": "Liverpool",         "goals": 25, "assists": 14, "appearances": 36, "minutes": 3180},
+      {"rank": 3,  "player": {"id": 103, "name": "Bukayo Saka",        "nationality": "English",    "age": 22, "position": "Forward"},  "team_id": 1,  "team_name": "Arsenal",           "goals": 23, "assists": 12, "appearances": 34, "minutes": 2970},
+      {"rank": 4,  "player": {"id": 104, "name": "Cole Palmer",        "nationality": "English",    "age": 22, "position": "Midfielder"},"team_id": 4,  "team_name": "Chelsea",           "goals": 21, "assists": 9,  "appearances": 35, "minutes": 3050},
+      {"rank": 5,  "player": {"id": 105, "name": "Alexander Isak",     "nationality": "Swedish",    "age": 24, "position": "Forward"},  "team_id": 7,  "team_name": "Newcastle United",  "goals": 20, "assists": 5,  "appearances": 33, "minutes": 2880},
+      {"rank": 6,  "player": {"id": 106, "name": "Ollie Watkins",      "nationality": "English",    "age": 28, "position": "Forward"},  "team_id": 9,  "team_name": "Aston Villa",       "goals": 19, "assists": 10, "appearances": 36, "minutes": 3120},
+      {"rank": 7,  "player": {"id": 107, "name": "Son Heung-min",      "nationality": "South Korean","age": 31, "position": "Forward"}, "team_id": 6,  "team_name": "Tottenham Hotspur", "goals": 17, "assists": 8,  "appearances": 35, "minutes": 2980},
+      {"rank": 8,  "player": {"id": 108, "name": "Jarrod Bowen",       "nationality": "English",    "age": 27, "position": "Forward"},  "team_id": 10, "team_name": "West Ham United",   "goals": 16, "assists": 7,  "appearances": 34, "minutes": 2840},
+      {"rank": 9,  "player": {"id": 109, "name": "Marcus Rashford",    "nationality": "English",    "age": 28, "position": "Forward"},  "team_id": 5,  "team_name": "Manchester United", "goals": 15, "assists": 6,  "appearances": 33, "minutes": 2650},
+      {"rank": 10, "player": {"id": 110, "name": "Bryan Mbeumo",       "nationality": "Cameroonian","age": 24, "position": "Forward"},  "team_id": 11, "team_name": "Brentford",         "goals": 15, "assists": 4,  "appearances": 35, "minutes": 2990}
+    ],
+    "2": [
+      {"rank": 1,  "player": {"id": 201, "name": "Kylian Mbappe",      "nationality": "French",     "age": 27, "position": "Forward"},  "team_id": 21, "team_name": "Real Madrid",     "goals": 34, "assists": 12, "appearances": 35, "minutes": 3000},
+      {"rank": 2,  "player": {"id": 202, "name": "Robert Lewandowski", "nationality": "Polish",     "age": 37, "position": "Forward"},  "team_id": 22, "team_name": "Barcelona",       "goals": 29, "assists": 7,  "appearances": 34, "minutes": 2870},
+      {"rank": 3,  "player": {"id": 203, "name": "Vinicius Jr",        "nationality": "Brazilian",  "age": 24, "position": "Forward"},  "team_id": 21, "team_name": "Real Madrid",     "goals": 25, "assists": 16, "appearances": 33, "minutes": 2750},
+      {"rank": 4,  "player": {"id": 204, "name": "Antoine Griezmann",  "nationality": "French",     "age": 35, "position": "Forward"},  "team_id": 23, "team_name": "Atletico Madrid", "goals": 21, "assists": 9,  "appearances": 35, "minutes": 2980},
+      {"rank": 5,  "player": {"id": 205, "name": "Lamine Yamal",       "nationality": "Spanish",    "age": 18, "position": "Forward"},  "team_id": 22, "team_name": "Barcelona",       "goals": 19, "assists": 18, "appearances": 34, "minutes": 2820},
+      {"rank": 6,  "player": {"id": 206, "name": "Jude Bellingham",    "nationality": "English",    "age": 22, "position": "Midfielder"},"team_id": 21, "team_name": "Real Madrid",     "goals": 18, "assists": 11, "appearances": 32, "minutes": 2710},
+      {"rank": 7,  "player": {"id": 207, "name": "Artem Dovbyk",       "nationality": "Ukrainian",  "age": 27, "position": "Forward"},  "team_id": 30, "team_name": "Girona",          "goals": 18, "assists": 5,  "appearances": 34, "minutes": 2900},
+      {"rank": 8,  "player": {"id": 208, "name": "Julian Alvarez",     "nationality": "Argentine",  "age": 24, "position": "Forward"},  "team_id": 23, "team_name": "Atletico Madrid", "goals": 17, "assists": 8,  "appearances": 33, "minutes": 2640},
+      {"rank": 9,  "player": {"id": 209, "name": "Raphinha",           "nationality": "Brazilian",  "age": 28, "position": "Forward"},  "team_id": 22, "team_name": "Barcelona",       "goals": 16, "assists": 12, "appearances": 34, "minutes": 2880},
+      {"rank": 10, "player": {"id": 210, "name": "Iker Muniain",       "nationality": "Spanish",    "age": 31, "position": "Midfielder"},"team_id": 26, "team_name": "Athletic Bilbao", "goals": 14, "assists": 9,  "appearances": 33, "minutes": 2650}
+    ],
+    "3": [
+      {"rank": 1,  "player": {"id": 301, "name": "Harry Kane",         "nationality": "English",    "age": 31, "position": "Forward"},  "team_id": 31, "team_name": "Bayern Munich",   "goals": 36, "assists": 10, "appearances": 33, "minutes": 2880},
+      {"rank": 2,  "player": {"id": 302, "name": "Lois Openda",        "nationality": "Belgian",    "age": 24, "position": "Forward"},  "team_id": 33, "team_name": "RB Leipzig",      "goals": 23, "assists": 6,  "appearances": 32, "minutes": 2720},
+      {"rank": 3,  "player": {"id": 303, "name": "Florian Wirtz",      "nationality": "German",     "age": 21, "position": "Midfielder"},"team_id": 34, "team_name": "Bayer Leverkusen","goals": 22, "assists": 16, "appearances": 31, "minutes": 2580},
+      {"rank": 4,  "player": {"id": 304, "name": "Victor Boniface",    "nationality": "Nigerian",   "age": 23, "position": "Forward"},  "team_id": 34, "team_name": "Bayer Leverkusen","goals": 21, "assists": 8,  "appearances": 29, "minutes": 2290},
+      {"rank": 5,  "player": {"id": 305, "name": "Omar Marmoush",      "nationality": "Egyptian",   "age": 25, "position": "Forward"},  "team_id": 35, "team_name": "Eintracht Frankfurt","goals": 20, "assists": 11,"appearances": 33, "minutes": 2810},
+      {"rank": 6,  "player": {"id": 306, "name": "Niclas Fullkrug",    "nationality": "German",     "age": 31, "position": "Forward"},  "team_id": 32, "team_name": "Borussia Dortmund","goals": 19, "assists": 5, "appearances": 30, "minutes": 2410},
+      {"rank": 7,  "player": {"id": 307, "name": "Serhou Guirassy",    "nationality": "Guinean",    "age": 28, "position": "Forward"},  "team_id": 32, "team_name": "Borussia Dortmund","goals": 18, "assists": 4, "appearances": 29, "minutes": 2340},
+      {"rank": 8,  "player": {"id": 308, "name": "Leroy Sane",         "nationality": "German",     "age": 29, "position": "Forward"},  "team_id": 31, "team_name": "Bayern Munich",   "goals": 16, "assists": 12, "appearances": 32, "minutes": 2680},
+      {"rank": 9,  "player": {"id": 309, "name": "Karim Adeyemi",      "nationality": "German",     "age": 22, "position": "Forward"},  "team_id": 32, "team_name": "Borussia Dortmund","goals": 15, "assists": 7, "appearances": 31, "minutes": 2420},
+      {"rank": 10, "player": {"id": 310, "name": "Granit Xhaka",       "nationality": "Swiss",      "age": 31, "position": "Midfielder"},"team_id": 34, "team_name": "Bayer Leverkusen","goals": 12, "assists": 14,"appearances": 33, "minutes": 2870}
+    ],
+    "4": [
+      {"rank": 1,  "player": {"id": 401, "name": "Lautaro Martinez",   "nationality": "Argentine",  "age": 26, "position": "Forward"},  "team_id": 41, "team_name": "Inter Milan",  "goals": 27, "assists": 8,  "appearances": 35, "minutes": 2980},
+      {"rank": 2,  "player": {"id": 402, "name": "Dusan Vlahovic",     "nationality": "Serbian",    "age": 24, "position": "Forward"},  "team_id": 43, "team_name": "Juventus",     "goals": 22, "assists": 4,  "appearances": 33, "minutes": 2760},
+      {"rank": 3,  "player": {"id": 403, "name": "Ademola Lookman",    "nationality": "Nigerian",   "age": 26, "position": "Forward"},  "team_id": 47, "team_name": "Atalanta",     "goals": 21, "assists": 9,  "appearances": 34, "minutes": 2840},
+      {"rank": 4,  "player": {"id": 404, "name": "Marcus Thuram",      "nationality": "French",     "age": 26, "position": "Forward"},  "team_id": 41, "team_name": "Inter Milan",  "goals": 20, "assists": 10, "appearances": 35, "minutes": 2920},
+      {"rank": 5,  "player": {"id": 405, "name": "Olivier Giroud",     "nationality": "French",     "age": 39, "position": "Forward"},  "team_id": 42, "team_name": "AC Milan",     "goals": 18, "assists": 6,  "appearances": 32, "minutes": 2480},
+      {"rank": 6,  "player": {"id": 406, "name": "Victor Osimhen",     "nationality": "Nigerian",   "age": 25, "position": "Forward"},  "team_id": 44, "team_name": "Napoli",       "goals": 17, "assists": 5,  "appearances": 30, "minutes": 2310},
+      {"rank": 7,  "player": {"id": 407, "name": "Paulo Dybala",       "nationality": "Argentine",  "age": 32, "position": "Forward"},  "team_id": 45, "team_name": "AS Roma",      "goals": 16, "assists": 9,  "appearances": 33, "minutes": 2640},
+      {"rank": 8,  "player": {"id": 408, "name": "Federico Chiesa",    "nationality": "Italian",    "age": 26, "position": "Forward"},  "team_id": 43, "team_name": "Juventus",     "goals": 14, "assists": 7,  "appearances": 28, "minutes": 2150},
+      {"rank": 9,  "player": {"id": 409, "name": "Rafael Leao",        "nationality": "Portuguese", "age": 24, "position": "Forward"},  "team_id": 42, "team_name": "AC Milan",     "goals": 13, "assists": 14, "appearances": 34, "minutes": 2720},
+      {"rank": 10, "player": {"id": 410, "name": "Mateo Retegui",      "nationality": "Italian",    "age": 25, "position": "Forward"},  "team_id": 47, "team_name": "Atalanta",     "goals": 13, "assists": 4,  "appearances": 30, "minutes": 2280}
+    ]
+  }
+}

@@ -1,0 +1,267 @@
+{
+  "matches": [
+    {
+      "id": 1001, "league_id": 1, "season": "2025/2026", "round": "Matchday 35",
+      "date": "2026-05-08T15:00:00Z", "status": {"short": "FT", "long": "Full Time", "elapsed": 90},
+      "home_team_id": 1, "away_team_id": 4,
+      "goals": {"home": 3, "away": 1},
+      "score": {"halftime": {"home": 2, "away": 0}, "fulltime": {"home": 3, "away": 1}},
+      "venue": "Emirates Stadium, London", "referee": "Michael Oliver",
+      "events": [
+        {"minute": 14, "type": "goal",        "team": "home", "player": "Bukayo Saka",         "assist": "Martin Odegaard"},
+        {"minute": 38, "type": "goal",        "team": "home", "player": "Leandro Trossard",    "assist": null},
+        {"minute": 55, "type": "yellow_card", "team": "away", "player": "Reece James",          "assist": null},
+        {"minute": 72, "type": "goal",        "team": "away", "player": "Cole Palmer",          "assist": "Nicolas Jackson"},
+        {"minute": 88, "type": "goal",        "team": "home", "player": "Gabriel Martinelli",  "assist": "Bukayo Saka"}
+      ]
+    },
+    {
+      "id": 1002, "league_id": 2, "season": "2025/2026", "round": "Matchday 34",
+      "date": "2026-05-08T20:00:00Z", "status": {"short": "FT", "long": "Full Time", "elapsed": 90},
+      "home_team_id": 21, "away_team_id": 25,
+      "goals": {"home": 4, "away": 0},
+      "score": {"halftime": {"home": 2, "away": 0}, "fulltime": {"home": 4, "away": 0}},
+      "venue": "Santiago Bernabeu, Madrid", "referee": "Jesus Gil Manzano",
+      "events": [
+        {"minute": 11, "type": "goal",        "team": "home", "player": "Kylian Mbappe",       "assist": "Vinicius Jr"},
+        {"minute": 29, "type": "goal",        "team": "home", "player": "Vinicius Jr",          "assist": "Bellingham"},
+        {"minute": 61, "type": "yellow_card", "team": "away", "player": "Giorgi Mamardashvili", "assist": null},
+        {"minute": 67, "type": "goal",        "team": "home", "player": "Jude Bellingham",      "assist": "Mbappe"},
+        {"minute": 84, "type": "goal",        "team": "home", "player": "Kylian Mbappe",       "assist": "Modric"}
+      ]
+    },
+    {
+      "id": 1003, "league_id": 3, "season": "2025/2026", "round": "Matchday 33",
+      "date": "2026-05-08T18:30:00Z", "status": {"short": "FT", "long": "Full Time", "elapsed": 90},
+      "home_team_id": 31, "away_team_id": 32,
+      "goals": {"home": 2, "away": 2},
+      "score": {"halftime": {"home": 1, "away": 0}, "fulltime": {"home": 2, "away": 2}},
+      "venue": "Allianz Arena, Munich", "referee": "Felix Zwayer",
+      "events": [
+        {"minute": 22, "type": "goal",      "team": "home", "player": "Harry Kane",         "assist": "Leroy Sane"},
+        {"minute": 58, "type": "goal",      "team": "away", "player": "Niclas Fullkrug",    "assist": "Brandt"},
+        {"minute": 73, "type": "goal",      "team": "home", "player": "Harry Kane",         "assist": "Kimmich"},
+        {"minute": 89, "type": "goal",      "team": "away", "player": "Karim Adeyemi",      "assist": "Reus"}
+      ]
+    },
+    {
+      "id": 1004, "league_id": 4, "season": "2025/2026", "round": "Matchday 36",
+      "date": "2026-05-09T19:45:00Z", "status": {"short": "FT", "long": "Full Time", "elapsed": 90},
+      "home_team_id": 41, "away_team_id": 44,
+      "goals": {"home": 3, "away": 0},
+      "score": {"halftime": {"home": 1, "away": 0}, "fulltime": {"home": 3, "away": 0}},
+      "venue": "San Siro, Milan", "referee": "Daniele Orsato",
+      "events": [
+        {"minute": 35, "type": "goal",        "team": "home", "player": "Lautaro Martinez", "assist": "Calhanoglu"},
+        {"minute": 51, "type": "yellow_card", "team": "away", "player": "Andre-Frank Zambo Anguissa", "assist": null},
+        {"minute": 65, "type": "goal",        "team": "home", "player": "Marcus Thuram",    "assist": "Dimarco"},
+        {"minute": 79, "type": "goal",        "team": "home", "player": "Henrikh Mkhitaryan","assist": null}
+      ]
+    },
+    {
+      "id": 1005, "league_id": 5, "season": "2025/2026", "round": "Matchday 32",
+      "date": "2026-05-09T20:45:00Z", "status": {"short": "FT", "long": "Full Time", "elapsed": 90},
+      "home_team_id": 51, "away_team_id": 52,
+      "goals": {"home": 5, "away": 0},
+      "score": {"halftime": {"home": 3, "away": 0}, "fulltime": {"home": 5, "away": 0}},
+      "venue": "Parc des Princes, Paris", "referee": "Clement Turpin",
+      "events": [
+        {"minute": 8,  "type": "goal",        "team": "home", "player": "Ousmane Dembele",  "assist": "Fabian Ruiz"},
+        {"minute": 24, "type": "goal",        "team": "home", "player": "Kang-in Lee",      "assist": "Nuno Mendes"},
+        {"minute": 40, "type": "goal",        "team": "home", "player": "Goncalo Ramos",    "assist": "Dembele"},
+        {"minute": 62, "type": "yellow_card", "team": "away", "player": "Pierre-Emerick Aubameyang","assist": null},
+        {"minute": 71, "type": "goal",        "team": "home", "player": "Ousmane Dembele",  "assist": "Ramos"},
+        {"minute": 85, "type": "goal",        "team": "home", "player": "Goncalo Ramos",    "assist": null}
+      ]
+    },
+    {
+      "id": 1006, "league_id": 1, "season": "2025/2026", "round": "Matchday 36",
+      "date": "2026-05-10T14:00:00Z", "status": {"short": "FT", "long": "Full Time", "elapsed": 90},
+      "home_team_id": 2, "away_team_id": 6,
+      "goals": {"home": 2, "away": 1},
+      "score": {"halftime": {"home": 1, "away": 0}, "fulltime": {"home": 2, "away": 1}},
+      "venue": "Etihad Stadium, Manchester", "referee": "Stuart Attwell",
+      "events": [
+        {"minute": 31, "type": "goal",      "team": "home", "player": "Erling Haaland",    "assist": "Phil Foden"},
+        {"minute": 58, "type": "goal",      "team": "away", "player": "Son Heung-min",      "assist": "James Maddison"},
+        {"minute": 77, "type": "goal",      "team": "home", "player": "Phil Foden",         "assist": "Haaland"}
+      ]
+    },
+    {
+      "id": 1007, "league_id": 2, "season": "2025/2026", "round": "Matchday 35",
+      "date": "2026-05-10T20:00:00Z", "status": {"short": "FT", "long": "Full Time", "elapsed": 90},
+      "home_team_id": 22, "away_team_id": 23,
+      "goals": {"home": 3, "away": 2},
+      "score": {"halftime": {"home": 1, "away": 1}, "fulltime": {"home": 3, "away": 2}},
+      "venue": "Estadi Olimpic Lluis Companys, Barcelona", "referee": "Ricardo de Burgos Bengoetxea",
+      "events": [
+        {"minute": 19, "type": "goal",        "team": "home", "player": "Robert Lewandowski","assist": "Yamal"},
+        {"minute": 38, "type": "goal",        "team": "away", "player": "Antoine Griezmann", "assist": "Alvarez"},
+        {"minute": 52, "type": "yellow_card", "team": "away", "player": "Marcos Llorente",   "assist": null},
+        {"minute": 61, "type": "goal",        "team": "home", "player": "Lamine Yamal",       "assist": "Raphinha"},
+        {"minute": 74, "type": "goal",        "team": "away", "player": "Julian Alvarez",     "assist": "Griezmann"},
+        {"minute": 90, "type": "goal",        "team": "home", "player": "Ferran Torres",      "assist": null}
+      ]
+    },
+    {
+      "id": 1008, "league_id": 3, "season": "2025/2026", "round": "Matchday 34",
+      "date": "2026-05-10T15:30:00Z", "status": {"short": "FT", "long": "Full Time", "elapsed": 90},
+      "home_team_id": 34, "away_team_id": 35,
+      "goals": {"home": 3, "away": 1},
+      "score": {"halftime": {"home": 2, "away": 0}, "fulltime": {"home": 3, "away": 1}},
+      "venue": "BayArena, Leverkusen", "referee": "Marco Fritz",
+      "events": [
+        {"minute": 12, "type": "goal",      "team": "home", "player": "Florian Wirtz",      "assist": "Xhaka"},
+        {"minute": 33, "type": "goal",      "team": "home", "player": "Victor Boniface",    "assist": "Wirtz"},
+        {"minute": 54, "type": "goal",      "team": "away", "player": "Omar Marmoush",      "assist": "Koch"},
+        {"minute": 82, "type": "goal",      "team": "home", "player": "Granit Xhaka",       "assist": null}
+      ]
+    },
+    {
+      "id": 1009, "league_id": 1, "season": "2025/2026", "round": "Matchday 36",
+      "date": "2026-05-10T16:30:00Z", "status": {"short": "FT", "long": "Full Time", "elapsed": 90},
+      "home_team_id": 3, "away_team_id": 7,
+      "goals": {"home": 2, "away": 0},
+      "score": {"halftime": {"home": 1, "away": 0}, "fulltime": {"home": 2, "away": 0}},
+      "venue": "Anfield, Liverpool", "referee": "Anthony Taylor",
+      "events": [
+        {"minute": 28, "type": "goal",      "team": "home", "player": "Mohamed Salah",      "assist": "Trent Alexander-Arnold"},
+        {"minute": 69, "type": "goal",      "team": "home", "player": "Darwin Nunez",        "assist": "Luis Diaz"}
+      ]
+    },
+    {
+      "id": 1010, "league_id": 8, "season": "2025/2026", "round": "Matchday 34",
+      "date": "2026-05-10T12:30:00Z", "status": {"short": "FT", "long": "Full Time", "elapsed": 90},
+      "home_team_id": 71, "away_team_id": 72,
+      "goals": {"home": 3, "away": 0},
+      "score": {"halftime": {"home": 1, "away": 0}, "fulltime": {"home": 3, "away": 0}},
+      "venue": "Johan Cruyff Arena, Amsterdam", "referee": "Pol van Boekel",
+      "events": [
+        {"minute": 18, "type": "goal",      "team": "home", "player": "Brian Brobbey",      "assist": "Bergwijn"},
+        {"minute": 55, "type": "goal",      "team": "home", "player": "Steven Berghuis",    "assist": null},
+        {"minute": 88, "type": "goal",      "team": "home", "player": "Chuba Akpom",        "assist": "Brobbey"}
+      ]
+    },
+
+    {
+      "id": 2001, "league_id": 1, "season": "2025/2026", "round": "Matchday 37",
+      "date": "2026-05-11T13:00:00Z", "status": {"short": "1H", "long": "First Half", "elapsed": 52},
+      "home_team_id": 5, "away_team_id": 9,
+      "goals": {"home": 1, "away": 1},
+      "score": {"halftime": {"home": null, "away": null}, "fulltime": {"home": null, "away": null}},
+      "venue": "Old Trafford, Manchester", "referee": "Simon Hooper",
+      "events": [
+        {"minute": 18, "type": "goal",        "team": "home", "player": "Marcus Rashford",  "assist": "Bruno Fernandes"},
+        {"minute": 44, "type": "yellow_card", "team": "home", "player": "Casemiro",          "assist": null},
+        {"minute": 47, "type": "goal",        "team": "away", "player": "Ollie Watkins",     "assist": "Leon Bailey"}
+      ]
+    },
+    {
+      "id": 2002, "league_id": 4, "season": "2025/2026", "round": "Matchday 37",
+      "date": "2026-05-11T11:00:00Z", "status": {"short": "2H", "long": "Second Half", "elapsed": 68},
+      "home_team_id": 43, "away_team_id": 42,
+      "goals": {"home": 0, "away": 1},
+      "score": {"halftime": {"home": 0, "away": 0}, "fulltime": {"home": null, "away": null}},
+      "venue": "Allianz Stadium, Turin", "referee": "Daniele Chiffi",
+      "events": [
+        {"minute": 60, "type": "goal",        "team": "away", "player": "Olivier Giroud",   "assist": "Theo Hernandez"},
+        {"minute": 65, "type": "red_card",    "team": "home", "player": "Federico Chiesa",   "assist": null}
+      ]
+    },
+    {
+      "id": 2003, "league_id": 2, "season": "2025/2026", "round": "Matchday 36",
+      "date": "2026-05-11T10:00:00Z", "status": {"short": "HT", "long": "Half Time", "elapsed": 45},
+      "home_team_id": 21, "away_team_id": 22,
+      "goals": {"home": 2, "away": 1},
+      "score": {"halftime": {"home": 2, "away": 1}, "fulltime": {"home": null, "away": null}},
+      "venue": "Santiago Bernabeu, Madrid", "referee": "Antonio Miguel Mateu Lahoz",
+      "events": [
+        {"minute": 9,  "type": "goal",        "team": "home", "player": "Kylian Mbappe",    "assist": "Rodrygo"},
+        {"minute": 27, "type": "goal",        "team": "away", "player": "Lamine Yamal",      "assist": "Raphinha"},
+        {"minute": 41, "type": "goal",        "team": "home", "player": "Vinicius Jr",       "assist": "Mbappe"},
+        {"minute": 44, "type": "yellow_card", "team": "away", "player": "Frenkie de Jong",   "assist": null}
+      ]
+    },
+
+    {
+      "id": 3001, "league_id": 1, "season": "2025/2026", "round": "Matchday 37",
+      "date": "2026-05-11T17:30:00Z", "status": {"short": "NS", "long": "Not Started", "elapsed": null},
+      "home_team_id": 1, "away_team_id": 3,
+      "goals": {"home": null, "away": null},
+      "score": {"halftime": {"home": null, "away": null}, "fulltime": {"home": null, "away": null}},
+      "venue": "Emirates Stadium, London", "referee": "Craig Pawson", "events": []
+    },
+    {
+      "id": 3002, "league_id": 1, "season": "2025/2026", "round": "Matchday 37",
+      "date": "2026-05-11T20:00:00Z", "status": {"short": "NS", "long": "Not Started", "elapsed": null},
+      "home_team_id": 4, "away_team_id": 8,
+      "goals": {"home": null, "away": null},
+      "score": {"halftime": {"home": null, "away": null}, "fulltime": {"home": null, "away": null}},
+      "venue": "Stamford Bridge, London", "referee": "Jarred Gillett", "events": []
+    },
+    {
+      "id": 3003, "league_id": 3, "season": "2025/2026", "round": "Matchday 34",
+      "date": "2026-05-12T19:30:00Z", "status": {"short": "NS", "long": "Not Started", "elapsed": null},
+      "home_team_id": 31, "away_team_id": 34,
+      "goals": {"home": null, "away": null},
+      "score": {"halftime": {"home": null, "away": null}, "fulltime": {"home": null, "away": null}},
+      "venue": "Allianz Arena, Munich", "referee": "Daniel Siebert", "events": []
+    },
+    {
+      "id": 3004, "league_id": 5, "season": "2025/2026", "round": "Matchday 33",
+      "date": "2026-05-12T20:00:00Z", "status": {"short": "NS", "long": "Not Started", "elapsed": null},
+      "home_team_id": 51, "away_team_id": 54,
+      "goals": {"home": null, "away": null},
+      "score": {"halftime": {"home": null, "away": null}, "fulltime": {"home": null, "away": null}},
+      "venue": "Parc des Princes, Paris", "referee": "Benoit Bastien", "events": []
+    },
+    {
+      "id": 3005, "league_id": 7, "season": "2026", "round": "Week 10",
+      "date": "2026-05-13T00:00:00Z", "status": {"short": "NS", "long": "Not Started", "elapsed": null},
+      "home_team_id": 63, "away_team_id": 61,
+      "goals": {"home": null, "away": null},
+      "score": {"halftime": {"home": null, "away": null}, "fulltime": {"home": null, "away": null}},
+      "venue": "Chase Stadium, Fort Lauderdale", "referee": "Allen Chapman", "events": []
+    },
+    {
+      "id": 3006, "league_id": 1, "season": "2025/2026", "round": "Matchday 37",
+      "date": "2026-05-14T19:45:00Z", "status": {"short": "NS", "long": "Not Started", "elapsed": null},
+      "home_team_id": 2, "away_team_id": 10,
+      "goals": {"home": null, "away": null},
+      "score": {"halftime": {"home": null, "away": null}, "fulltime": {"home": null, "away": null}},
+      "venue": "Etihad Stadium, Manchester", "referee": "Paul Tierney", "events": []
+    },
+    {
+      "id": 3007, "league_id": 2, "season": "2025/2026", "round": "Matchday 37",
+      "date": "2026-05-14T20:00:00Z", "status": {"short": "NS", "long": "Not Started", "elapsed": null},
+      "home_team_id": 21, "away_team_id": 23,
+      "goals": {"home": null, "away": null},
+      "score": {"halftime": {"home": null, "away": null}, "fulltime": {"home": null, "away": null}},
+      "venue": "Santiago Bernabeu, Madrid", "referee": "Jose Maria Sanchez Martinez", "events": []
+    },
+    {
+      "id": 3008, "league_id": 8, "season": "2025/2026", "round": "Matchday 34",
+      "date": "2026-05-15T18:00:00Z", "status": {"short": "NS", "long": "Not Started", "elapsed": null},
+      "home_team_id": 71, "away_team_id": 73,
+      "goals": {"home": null, "away": null},
+      "score": {"halftime": {"home": null, "away": null}, "fulltime": {"home": null, "away": null}},
+      "venue": "Johan Cruyff Arena, Amsterdam", "referee": "Dennis Higler", "events": []
+    },
+    {
+      "id": 3009, "league_id": 6, "season": "2025/2026", "round": "Final",
+      "date": "2026-05-16T20:00:00Z", "status": {"short": "NS", "long": "Not Started", "elapsed": null},
+      "home_team_id": 4, "away_team_id": 1,
+      "goals": {"home": null, "away": null},
+      "score": {"halftime": {"home": null, "away": null}, "fulltime": {"home": null, "away": null}},
+      "venue": "Allianz Arena, Munich (Neutral)", "referee": "Slavko Vincic", "events": []
+    },
+    {
+      "id": 3010, "league_id": 4, "season": "2025/2026", "round": "Matchday 37",
+      "date": "2026-05-17T19:45:00Z", "status": {"short": "NS", "long": "Not Started", "elapsed": null},
+      "home_team_id": 43, "away_team_id": 44,
+      "goals": {"home": null, "away": null},
+      "score": {"halftime": {"home": null, "away": null}, "fulltime": {"home": null, "away": null}},
+      "venue": "Allianz Stadium, Turin", "referee": "Maurizio Mariani", "events": []
+    }
+  ]
+}

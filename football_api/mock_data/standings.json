@@ -1,0 +1,85 @@
+{
+  "standings": {
+    "1": {
+      "league_id": 1, "league_name": "Premier League", "season": "2025/2026", "matchday": 36,
+      "table": [
+        {"rank": 1,  "team_id": 1,  "team_name": "Arsenal",                 "played": 36, "won": 25, "drawn": 6,  "lost": 5,  "goals_for": 80, "goals_against": 36, "goal_diff": 44,  "points": 81, "form": "WWWDW"},
+        {"rank": 2,  "team_id": 3,  "team_name": "Liverpool",               "played": 36, "won": 23, "drawn": 8,  "lost": 5,  "goals_for": 76, "goals_against": 38, "goal_diff": 38,  "points": 77, "form": "WWDWW"},
+        {"rank": 3,  "team_id": 2,  "team_name": "Manchester City",         "played": 36, "won": 23, "drawn": 6,  "lost": 7,  "goals_for": 72, "goals_against": 41, "goal_diff": 31,  "points": 75, "form": "WWWLW"},
+        {"rank": 4,  "team_id": 4,  "team_name": "Chelsea",                 "played": 36, "won": 20, "drawn": 8,  "lost": 8,  "goals_for": 66, "goals_against": 44, "goal_diff": 22,  "points": 68, "form": "WDWLW"},
+        {"rank": 5,  "team_id": 9,  "team_name": "Aston Villa",             "played": 36, "won": 19, "drawn": 7,  "lost": 10, "goals_for": 63, "goals_against": 49, "goal_diff": 14,  "points": 64, "form": "WDWWD"},
+        {"rank": 6,  "team_id": 7,  "team_name": "Newcastle United",        "played": 36, "won": 18, "drawn": 7,  "lost": 11, "goals_for": 60, "goals_against": 46, "goal_diff": 14,  "points": 61, "form": "LDWWW"},
+        {"rank": 7,  "team_id": 6,  "team_name": "Tottenham Hotspur",       "played": 36, "won": 17, "drawn": 8,  "lost": 11, "goals_for": 65, "goals_against": 56, "goal_diff": 9,   "points": 59, "form": "WDLWL"},
+        {"rank": 8,  "team_id": 8,  "team_name": "Brighton & Hove Albion", "played": 36, "won": 16, "drawn": 9,  "lost": 11, "goals_for": 59, "goals_against": 51, "goal_diff": 8,   "points": 57, "form": "DWWDL"},
+        {"rank": 9,  "team_id": 10, "team_name": "West Ham United",         "played": 36, "won": 14, "drawn": 9,  "lost": 13, "goals_for": 53, "goals_against": 59, "goal_diff": -6,  "points": 51, "form": "DLWDW"},
+        {"rank": 10, "team_id": 5,  "team_name": "Manchester United",       "played": 36, "won": 13, "drawn": 8,  "lost": 15, "goals_for": 46, "goals_against": 56, "goal_diff": -10, "points": 47, "form": "LWDLD"},
+        {"rank": 11, "team_id": 11, "team_name": "Brentford",               "played": 36, "won": 13, "drawn": 7,  "lost": 16, "goals_for": 51, "goals_against": 61, "goal_diff": -10, "points": 46, "form": "WLLDW"},
+        {"rank": 12, "team_id": 12, "team_name": "Crystal Palace",          "played": 36, "won": 12, "drawn": 9,  "lost": 15, "goals_for": 43, "goals_against": 53, "goal_diff": -10, "points": 45, "form": "DDWLL"},
+        {"rank": 13, "team_id": 13, "team_name": "Fulham",                  "played": 36, "won": 12, "drawn": 8,  "lost": 16, "goals_for": 49, "goals_against": 61, "goal_diff": -12, "points": 44, "form": "WLLWD"},
+        {"rank": 14, "team_id": 14, "team_name": "Wolverhampton Wanderers","played": 36, "won": 11, "drawn": 10, "lost": 15, "goals_for": 45, "goals_against": 59, "goal_diff": -14, "points": 43, "form": "DWDLL"},
+        {"rank": 15, "team_id": 15, "team_name": "Everton",                 "played": 36, "won": 11, "drawn": 9,  "lost": 16, "goals_for": 39, "goals_against": 53, "goal_diff": -14, "points": 42, "form": "LLDWD"},
+        {"rank": 16, "team_id": 16, "team_name": "Nottingham Forest",       "played": 36, "won": 10, "drawn": 10, "lost": 16, "goals_for": 43, "goals_against": 59, "goal_diff": -16, "points": 40, "form": "DLLWD"},
+        {"rank": 17, "team_id": 17, "team_name": "Leicester City",          "played": 36, "won": 9,  "drawn": 8,  "lost": 19, "goals_for": 41, "goals_against": 66, "goal_diff": -25, "points": 35, "form": "LLLWL"},
+        {"rank": 18, "team_id": 18, "team_name": "Burnley",                 "played": 36, "won": 7,  "drawn": 8,  "lost": 21, "goals_for": 36, "goals_against": 73, "goal_diff": -37, "points": 29, "form": "LLLLD"},
+        {"rank": 19, "team_id": 19, "team_name": "Luton Town",              "played": 36, "won": 6,  "drawn": 8,  "lost": 22, "goals_for": 31, "goals_against": 76, "goal_diff": -45, "points": 26, "form": "LLLLL"},
+        {"rank": 20, "team_id": 20, "team_name": "Sheffield United",        "played": 36, "won": 5,  "drawn": 6,  "lost": 25, "goals_for": 29, "goals_against": 86, "goal_diff": -57, "points": 21, "form": "LLLLL"}
+      ]
+    },
+    "2": {
+      "league_id": 2, "league_name": "La Liga", "season": "2025/2026", "matchday": 35,
+      "table": [
+        {"rank": 1,  "team_id": 21, "team_name": "Real Madrid",      "played": 35, "won": 27, "drawn": 5,  "lost": 3,  "goals_for": 89, "goals_against": 31, "goal_diff": 58,  "points": 86, "form": "WWWWW"},
+        {"rank": 2,  "team_id": 22, "team_name": "Barcelona",         "played": 35, "won": 25, "drawn": 6,  "lost": 4,  "goals_for": 83, "goals_against": 37, "goal_diff": 46,  "points": 81, "form": "WWDWL"},
+        {"rank": 3,  "team_id": 23, "team_name": "Atletico Madrid",   "played": 35, "won": 22, "drawn": 5,  "lost": 8,  "goals_for": 70, "goals_against": 44, "goal_diff": 26,  "points": 71, "form": "WLWWW"},
+        {"rank": 4,  "team_id": 30, "team_name": "Girona",            "played": 35, "won": 19, "drawn": 8,  "lost": 8,  "goals_for": 67, "goals_against": 50, "goal_diff": 17,  "points": 65, "form": "WDWWL"},
+        {"rank": 5,  "team_id": 26, "team_name": "Athletic Bilbao",   "played": 35, "won": 18, "drawn": 7,  "lost": 10, "goals_for": 59, "goals_against": 46, "goal_diff": 13,  "points": 61, "form": "WWLWD"},
+        {"rank": 6,  "team_id": 27, "team_name": "Real Sociedad",     "played": 35, "won": 17, "drawn": 8,  "lost": 10, "goals_for": 56, "goals_against": 49, "goal_diff": 7,   "points": 59, "form": "DWWLW"},
+        {"rank": 7,  "team_id": 28, "team_name": "Villarreal",        "played": 35, "won": 16, "drawn": 7,  "lost": 12, "goals_for": 54, "goals_against": 52, "goal_diff": 2,   "points": 55, "form": "WLWDL"},
+        {"rank": 8,  "team_id": 29, "team_name": "Real Betis",        "played": 35, "won": 14, "drawn": 9,  "lost": 12, "goals_for": 49, "goals_against": 51, "goal_diff": -2,  "points": 51, "form": "DWLDW"},
+        {"rank": 9,  "team_id": 25, "team_name": "Valencia",          "played": 35, "won": 12, "drawn": 8,  "lost": 15, "goals_for": 43, "goals_against": 56, "goal_diff": -13, "points": 44, "form": "LLLWW"},
+        {"rank": 10, "team_id": 24, "team_name": "Sevilla",           "played": 35, "won": 10, "drawn": 7,  "lost": 18, "goals_for": 39, "goals_against": 63, "goal_diff": -24, "points": 37, "form": "LLDLL"}
+      ]
+    },
+    "3": {
+      "league_id": 3, "league_name": "Bundesliga", "season": "2025/2026", "matchday": 33,
+      "table": [
+        {"rank": 1,  "team_id": 34, "team_name": "Bayer Leverkusen",         "played": 33, "won": 26, "drawn": 5,  "lost": 2,  "goals_for": 90, "goals_against": 33, "goal_diff": 57,  "points": 83, "form": "WWWWW"},
+        {"rank": 2,  "team_id": 31, "team_name": "Bayern Munich",            "played": 33, "won": 25, "drawn": 4,  "lost": 4,  "goals_for": 87, "goals_against": 39, "goal_diff": 48,  "points": 79, "form": "WWDWW"},
+        {"rank": 3,  "team_id": 32, "team_name": "Borussia Dortmund",        "played": 33, "won": 21, "drawn": 6,  "lost": 6,  "goals_for": 74, "goals_against": 46, "goal_diff": 28,  "points": 69, "form": "WDWLW"},
+        {"rank": 4,  "team_id": 33, "team_name": "RB Leipzig",               "played": 33, "won": 19, "drawn": 7,  "lost": 7,  "goals_for": 70, "goals_against": 49, "goal_diff": 21,  "points": 64, "form": "WWDWL"},
+        {"rank": 5,  "team_id": 35, "team_name": "Eintracht Frankfurt",      "played": 33, "won": 18, "drawn": 6,  "lost": 9,  "goals_for": 63, "goals_against": 53, "goal_diff": 10,  "points": 60, "form": "LWWWL"},
+        {"rank": 6,  "team_id": 38, "team_name": "SC Freiburg",              "played": 33, "won": 16, "drawn": 8,  "lost": 9,  "goals_for": 56, "goals_against": 49, "goal_diff": 7,   "points": 56, "form": "DWWDL"},
+        {"rank": 7,  "team_id": 37, "team_name": "VfL Wolfsburg",            "played": 33, "won": 14, "drawn": 9,  "lost": 10, "goals_for": 53, "goals_against": 53, "goal_diff": 0,   "points": 51, "form": "WDLDW"},
+        {"rank": 8,  "team_id": 40, "team_name": "TSG Hoffenheim",           "played": 33, "won": 13, "drawn": 8,  "lost": 12, "goals_for": 49, "goals_against": 56, "goal_diff": -7,  "points": 47, "form": "LLDWW"},
+        {"rank": 9,  "team_id": 36, "team_name": "Borussia Monchengladbach", "played": 33, "won": 12, "drawn": 9,  "lost": 12, "goals_for": 46, "goals_against": 56, "goal_diff": -10, "points": 45, "form": "DDLWL"},
+        {"rank": 10, "team_id": 39, "team_name": "Union Berlin",             "played": 33, "won": 10, "drawn": 8,  "lost": 15, "goals_for": 43, "goals_against": 63, "goal_diff": -20, "points": 38, "form": "LLLWL"}
+      ]
+    },
+    "4": {
+      "league_id": 4, "league_name": "Serie A", "season": "2025/2026", "matchday": 36,
+      "table": [
+        {"rank": 1,  "team_id": 41, "team_name": "Inter Milan",    "played": 36, "won": 26, "drawn": 6,  "lost": 4,  "goals_for": 85, "goals_against": 32, "goal_diff": 53,  "points": 84, "form": "WWWDW"},
+        {"rank": 2,  "team_id": 42, "team_name": "AC Milan",       "played": 36, "won": 23, "drawn": 7,  "lost": 6,  "goals_for": 74, "goals_against": 40, "goal_diff": 34,  "points": 76, "form": "WWWLW"},
+        {"rank": 3,  "team_id": 47, "team_name": "Atalanta",       "played": 36, "won": 22, "drawn": 6,  "lost": 8,  "goals_for": 78, "goals_against": 48, "goal_diff": 30,  "points": 72, "form": "WWLDW"},
+        {"rank": 4,  "team_id": 43, "team_name": "Juventus",       "played": 36, "won": 20, "drawn": 8,  "lost": 8,  "goals_for": 62, "goals_against": 42, "goal_diff": 20,  "points": 68, "form": "WDLWL"},
+        {"rank": 5,  "team_id": 44, "team_name": "Napoli",         "played": 36, "won": 18, "drawn": 7,  "lost": 11, "goals_for": 60, "goals_against": 48, "goal_diff": 12,  "points": 61, "form": "LLWWW"},
+        {"rank": 6,  "team_id": 45, "team_name": "AS Roma",        "played": 36, "won": 16, "drawn": 8,  "lost": 12, "goals_for": 56, "goals_against": 54, "goal_diff": 2,   "points": 56, "form": "WDWDL"},
+        {"rank": 7,  "team_id": 46, "team_name": "Lazio",          "played": 36, "won": 15, "drawn": 9,  "lost": 12, "goals_for": 55, "goals_against": 55, "goal_diff": 0,   "points": 54, "form": "DWWLL"},
+        {"rank": 8,  "team_id": 48, "team_name": "Fiorentina",     "played": 36, "won": 14, "drawn": 8,  "lost": 14, "goals_for": 50, "goals_against": 56, "goal_diff": -6,  "points": 50, "form": "LWWLD"},
+        {"rank": 9,  "team_id": 50, "team_name": "Bologna",        "played": 36, "won": 13, "drawn": 9,  "lost": 14, "goals_for": 48, "goals_against": 58, "goal_diff": -10, "points": 48, "form": "DDWLL"},
+        {"rank": 10, "team_id": 49, "team_name": "Torino",         "played": 36, "won": 11, "drawn": 8,  "lost": 17, "goals_for": 42, "goals_against": 62, "goal_diff": -20, "points": 41, "form": "LLLWD"}
+      ]
+    },
+    "8": {
+      "league_id": 8, "league_name": "Eredivisie", "season": "2025/2026", "matchday": 34,
+      "table": [
+        {"rank": 1, "team_id": 72, "team_name": "PSV Eindhoven", "played": 34, "won": 26, "drawn": 5,  "lost": 3,  "goals_for": 91, "goals_against": 31, "goal_diff": 60,  "points": 83, "form": "WWWLW"},
+        {"rank": 2, "team_id": 73, "team_name": "Feyenoord",     "played": 34, "won": 24, "drawn": 5,  "lost": 5,  "goals_for": 82, "goals_against": 38, "goal_diff": 44,  "points": 77, "form": "WWWWL"},
+        {"rank": 3, "team_id": 71, "team_name": "Ajax",          "played": 34, "won": 22, "drawn": 6,  "lost": 6,  "goals_for": 78, "goals_against": 42, "goal_diff": 36,  "points": 72, "form": "WWWWW"},
+        {"rank": 4, "team_id": 74, "team_name": "AZ Alkmaar",    "played": 34, "won": 18, "drawn": 7,  "lost": 9,  "goals_for": 62, "goals_against": 48, "goal_diff": 14,  "points": 61, "form": "WDWWL"},
+        {"rank": 5, "team_id": 75, "team_name": "FC Utrecht",    "played": 34, "won": 14, "drawn": 8,  "lost": 12, "goals_for": 52, "goals_against": 56, "goal_diff": -4,  "points": 50, "form": "WDLWL"},
+        {"rank": 6, "team_id": 76, "team_name": "FC Twente",     "played": 34, "won": 12, "drawn": 9,  "lost": 13, "goals_for": 47, "goals_against": 58, "goal_diff": -11, "points": 45, "form": "LDWDL"}
+      ]
+    }
+  }
+}
